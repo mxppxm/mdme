@@ -1,8 +1,8 @@
 MdMe
 ====
 
-MdMe is a lightweight JavaScript-based utility to create self-rendering
-Markdown documents.
+MdMe (pronounced em-dee-me) is a lightweight JavaScript-based utility to
+create self-rendering Markdown documents.
 
 [![View Demo][Demo SVG]][Demo URL]
 [![Build Status][Travis CI SVG]][Travis CI URL]
