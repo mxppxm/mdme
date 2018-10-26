@@ -226,7 +226,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       loadjs('https://cdnjs.cloudflare.com/ajax/libs/commonmark/0.28.1/commonmark.js')
 
       if (options.renderOnLoad) {
-        // Render CommonMark + LaTeX after the document loads.
         window.onload = mdme.renderPage
       }
 

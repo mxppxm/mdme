@@ -9,7 +9,6 @@ describe('main', function () {
     global.window = new jsdom.JSDOM(html).window
     global.window.commonmark = commonmark
     global.window.mdme = {
-      useMathJax: false,
       onRenderPage: function () {
         delete global.window
       }
@@ -25,7 +24,6 @@ describe('main', function () {
     global.window.commonmark = commonmark
 
     global.window.mdme = {
-      useMathJax: false,
       onRenderPage: function () {
         var textareaList = window.document.getElementsByTagName('textarea')
         var mainList = window.document.getElementsByTagName('main')
@@ -34,7 +32,6 @@ describe('main', function () {
         assert.strictEqual(mainList.length, 1)
 
         delete global.window
-        delete global.MathJax
 
         done()
       }

@@ -31,12 +31,10 @@ Contents
 * [Valid HTML5](#valid-html5)
 * [Use MdMe in Web Pages](#use-mdme-in-web-pages)
   * [Style](#style)
-  * [Render Markdown Without MathJax](#render-markdown-without-mathjax)
   * [Skip Automatic Rendering on Load](#skip-automatic-rendering-on-load)
   * [Set Options After Loading](#set-options-after-loading)
 * [Use MdMe as a Library](#use-mdme-as-a-library)
-  * [Render Markdown and LaTeX](#render-markdown-and-latex)
-  * [Render Markdown Only](#render-markdown-only)
+  * [Render Markdown](#render-markdown)
 * [Configuration Options](#configuration-options)
 * [License](#license)
 * [Support](#support)
@@ -303,40 +301,6 @@ Here is the output:
 [e07-set-options.html](https://opendocs.github.io/mdme/examples/e06-set-options.html).
 
 
-Use MdMe as a Library
-----------------------
-
-Most of the examples so far use MdMe as a utility. These examples load
-MdMe in a web page and then MdMe automatically picks the `<textarea>`
-element containing Markdown + LaTeX code and renders it as HTML.
-
-In this section, we see how to use MdMe as a library and invoke its
-functions. These examples would run as is on Node.js.
-
-
-### Install MdMe
-
-Enter the following command to install MdMe:
-
-    npm install mdme
-
-
-### Render Markdown
-
-To render Markdown-only content, use the `mdme.renderCommonMark()`
-function to avoid the overhead of looking for and protecting LaTeX
-content from being rendered as Markdown. Here is an example:
-
-    var mdme = require('mdme')
-    var input = '**Foo** *Bar* `Baz`'
-    var output = mdme.renderCommonMark(input)
-    console.log(output)
-
-The above example produces the following output:
-
-    <p><strong>Foo</strong> <em>Bar</em> <code>Baz</code></p>
-
-
 Configuration Options
 ---------------------
 
@@ -357,15 +321,7 @@ Here is a quick reference for all the supported configuration options:
   - `onRenderPage` (`undefined` by default): A callback function that is
     automatically invoked after MdMe completes rendering the page. It
     is guaranteed that MdMe has completed rendering the page before
-    invoking this callback. If `useMathJax` option is `true`, it is also
-    guaranteed that MdMe has invoked typesetting LaTeX with MathJax
-    before invoking this callback. However it is not guaranteed that
-    MathJax has completed typesetting the page before this callback is
-    invoked. MathJax typesetting occurs asynchronously and may complete
-    after this callback is invoked. This callback runs only when the
-    `mdme.renderPage()` function runs in web browser either due to
-    automatic rendering on load or due to explicit call to this
-    function.
+    invoking this callback.
 
 
 License

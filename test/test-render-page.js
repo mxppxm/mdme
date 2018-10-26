@@ -10,7 +10,6 @@ describe('renderPage', function () {
 
     global.window = new jsdom.JSDOM(html).window
     global.window.commonmark = commonmark
-    global.window.MathJax = { Hub: { Queue: sinon.fake() } }
 
     mdme.renderPage()
 
@@ -22,7 +21,6 @@ describe('renderPage', function () {
 
     global.window = new jsdom.JSDOM(html).window
     global.window.commonmark = commonmark
-    global.window.MathJax = { Hub: { Queue: sinon.fake() } }
 
     mdme.renderPage()
 
@@ -34,7 +32,6 @@ describe('renderPage', function () {
 
     global.window = new jsdom.JSDOM(html).window
     global.window.commonmark = commonmark
-    global.window.MathJax = { Hub: { Queue: sinon.fake() } }
 
     mdme.renderPage()
 
@@ -46,7 +43,6 @@ describe('renderPage', function () {
 
     global.window = new jsdom.JSDOM(html).window
     global.window.commonmark = commonmark
-    global.window.MathJax = { Hub: { Queue: sinon.fake() } }
 
     mdme.renderPage()
 
@@ -58,7 +54,6 @@ describe('renderPage', function () {
 
     global.window = new jsdom.JSDOM(html).window
     global.window.commonmark = commonmark
-    global.window.MathJax = { Hub: { Queue: sinon.fake() } }
 
     mdme.renderPage()
 
@@ -70,47 +65,9 @@ describe('renderPage', function () {
 
     global.window = new jsdom.JSDOM(html).window
     global.window.commonmark = commonmark
-    global.window.MathJax = { Hub: { Queue: sinon.fake() } }
 
     mdme.renderPage()
 
     assert.strictEqual(global.window.document.title, 'Qux')
   })
-
-  /*
-  it('in browser with render on load', function (done) {
-    var html = '<!DOCTYPE html><textarea>Foo'
-    global.window = new jsdom.JSDOM(html).window
-    global.window.commonmark = commonmark
-    global.window.MathJax = { Hub: { Queue: function () {} } } // mock
-    global.window.mdme = {
-      renderOnLoad: true,
-      onRenderPage: function () {
-        assert.notStrictEqual(typeof global.window.mdme, 'undefined')
-
-        delete global.window
-        delete global.MathJax
-
-        done()
-      }
-    }
-
-    mdme.renderPage()
-  })
-
-  it('in browser use mathjax', function (done) {
-    var html = '<!DOCTYPE html><textarea>Foo'
-    global.window = new jsdom.JSDOM(html).window
-    global.window.commonmark = commonmark
-    global.window.MathJax = { Hub: { Queue: function () {} } } // mock
-    global.window.mdme = {
-      onRenderPage: function () {
-        delete global.window
-        delete global.MathJax
-        done()
-      }
-    }
-    mdme.renderPage()
-  })
-  */
 })
