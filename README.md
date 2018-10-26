@@ -7,8 +7,8 @@ create self-rendering Markdown documents.
 [![View Demo][Demo SVG]][Demo URL]
 [![Build Status][Travis CI SVG]][Travis CI URL]
 [![Coverage Status][Coveralls SVG]][Coveralls URL]
-[![NPM Version][Version SVG]][NPM URL]
-[![NPM Downloads][Downloads SVG]][NPM URL]
+[![NPM Version][Version SVG]][NPM URL] <!--
+[![NPM Downloads][Downloads SVG]][NPM URL] -->
 [![MIT License][License SVG]][L]
 
 [Demo SVG]: https://img.shields.io/badge/view-demo-brightgreen.svg
