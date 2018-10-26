@@ -23,9 +23,9 @@ deps:
 
 TMP_REV = /tmp/rev.txt
 CAT_REV = cat $(TMP_REV)
-GIT_SRC = https://github.com/susam/texme
-GIT_DST = https://github.com/opendocs/texme
-WEB_URL = https://opendocs.github.io/texme/
+GIT_SRC = https://github.com/susam/mdme
+GIT_DST = https://github.com/opendocs/mdme
+WEB_URL = https://opendocs.github.io/mdme/
 TMP_GIT = /tmp/tmpgit
 README  = docs/README.md
 
@@ -37,15 +37,15 @@ pushdocs: docs
 	# Copy examples.
 	mkdir docs/examples
 	for f in examples/*.html; do \
-	    sed 's/...texme.js/https:\/\/cdn.jsdelivr.net\/npm\/texme@0.4.0/' "$$f" > \
+	    sed 's/...mdme.js/https:\/\/cdn.jsdelivr.net\/npm\/mdme@0.1.0/' "$$f" > \
 	        docs/examples/"$$(basename "$$f")"; \
 	done
 	#
 	# Create README.
-	echo TeXMe Documentation and Examples >> $(README)
-	echo ================================ >> $(README)
+	echo TdMe Documentation and Examples >> $(README)
+	echo =============================== >> $(README)
 	echo >> $(README)
-	echo Automatically generated from [susam/texme][GIT_SRC] >> $(README)
+	echo Automatically generated from [susam/mdme][GIT_SRC] >> $(README)
 	echo "([$$($(CAT_REV))][GIT_REV])". >> $(README)
 	echo >> $(README)
 	echo Visit $(WEB_URL) to view the documentation. >> $(README)

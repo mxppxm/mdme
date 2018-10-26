@@ -1,22 +1,22 @@
 var assert = require('assert')
 var jsdom = require('jsdom')
 var commonmark = require('commonmark')
-var texme = require('../texme.js')
+var mdme = require('../mdme.js')
 
 describe('main', function () {
-  it('texme definition in browser', function () {
+  it('mdme definition in browser', function () {
     var html = '<!DOCTYPE html><textarea>Foo'
     global.window = new jsdom.JSDOM(html).window
     global.window.commonmark = commonmark
-    global.window.texme = {
+    global.window.mdme = {
       useMathJax: false,
       onRenderPage: function () {
         delete global.window
       }
     }
-    texme.main()
-    assert.notStrictEqual(typeof global.window.texme, 'undefined')
-    assert.strictEqual(typeof global.window.texme.render, 'function')
+    mdme.main()
+    assert.notStrictEqual(typeof global.window.mdme, 'undefined')
+    assert.strictEqual(typeof global.window.mdme.render, 'function')
   })
 
   it('render on load enabled', function (done) {
@@ -24,7 +24,7 @@ describe('main', function () {
     global.window = new jsdom.JSDOM(html).window
     global.window.commonmark = commonmark
 
-    global.window.texme = {
+    global.window.mdme = {
       useMathJax: false,
       onRenderPage: function () {
         var textareaList = window.document.getElementsByTagName('textarea')
@@ -40,7 +40,7 @@ describe('main', function () {
       }
     }
 
-    texme.main()
+    mdme.main()
   })
 
   it('render on load disabled', function (done) {
@@ -48,9 +48,9 @@ describe('main', function () {
     global.window = new jsdom.JSDOM(html).window
     global.window.commonmark = commonmark
 
-    global.window.texme = { renderOnLoad: false }
+    global.window.mdme = { renderOnLoad: false }
 
-    texme.main()
+    mdme.main()
 
     setTimeout(function () {
       var textareaList = window.document.getElementsByTagName('textarea')

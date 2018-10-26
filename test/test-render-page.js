@@ -2,22 +2,9 @@ var assert = require('assert')
 var jsdom = require('jsdom')
 var commonmark = require('commonmark')
 var sinon = require('sinon')
-var texme = require('../texme.js')
+var mdme = require('../mdme.js')
 
 describe('renderPage', function () {
-  it('mathjax typeset', function () {
-    var html = '<!DOCTYPE html><textarea>Foo'
-    var fakeQueueFunction = sinon.fake()
-
-    global.window = new jsdom.JSDOM(html).window
-    global.window.commonmark = commonmark
-    global.window.MathJax = { Hub: { Queue: fakeQueueFunction } }
-
-    texme.renderPage()
-
-    assert(fakeQueueFunction.called)
-  })
-
   it('implicit title from content', function () {
     var html = '<!DOCTYPE html><textarea>Foo\nBar\nBaz'
 
@@ -25,7 +12,7 @@ describe('renderPage', function () {
     global.window.commonmark = commonmark
     global.window.MathJax = { Hub: { Queue: sinon.fake() } }
 
-    texme.renderPage()
+    mdme.renderPage()
 
     assert.strictEqual(global.window.document.title, 'Foo')
   })
@@ -37,7 +24,7 @@ describe('renderPage', function () {
     global.window.commonmark = commonmark
     global.window.MathJax = { Hub: { Queue: sinon.fake() } }
 
-    texme.renderPage()
+    mdme.renderPage()
 
     assert.strictEqual(global.window.document.title, 'Foo')
   })
@@ -49,7 +36,7 @@ describe('renderPage', function () {
     global.window.commonmark = commonmark
     global.window.MathJax = { Hub: { Queue: sinon.fake() } }
 
-    texme.renderPage()
+    mdme.renderPage()
 
     assert.strictEqual(global.window.document.title, 'Foo')
   })
@@ -61,7 +48,7 @@ describe('renderPage', function () {
     global.window.commonmark = commonmark
     global.window.MathJax = { Hub: { Queue: sinon.fake() } }
 
-    texme.renderPage()
+    mdme.renderPage()
 
     assert.strictEqual(global.window.document.title, 'Qux')
   })
@@ -73,7 +60,7 @@ describe('renderPage', function () {
     global.window.commonmark = commonmark
     global.window.MathJax = { Hub: { Queue: sinon.fake() } }
 
-    texme.renderPage()
+    mdme.renderPage()
 
     assert.strictEqual(global.window.document.title, '### Qux ###')
   })
@@ -85,7 +72,7 @@ describe('renderPage', function () {
     global.window.commonmark = commonmark
     global.window.MathJax = { Hub: { Queue: sinon.fake() } }
 
-    texme.renderPage()
+    mdme.renderPage()
 
     assert.strictEqual(global.window.document.title, 'Qux')
   })
@@ -96,10 +83,10 @@ describe('renderPage', function () {
     global.window = new jsdom.JSDOM(html).window
     global.window.commonmark = commonmark
     global.window.MathJax = { Hub: { Queue: function () {} } } // mock
-    global.window.texme = {
+    global.window.mdme = {
       renderOnLoad: true,
       onRenderPage: function () {
-        assert.notStrictEqual(typeof global.window.texme, 'undefined')
+        assert.notStrictEqual(typeof global.window.mdme, 'undefined')
 
         delete global.window
         delete global.MathJax
@@ -108,7 +95,7 @@ describe('renderPage', function () {
       }
     }
 
-    texme.renderPage()
+    mdme.renderPage()
   })
 
   it('in browser use mathjax', function (done) {
@@ -116,14 +103,14 @@ describe('renderPage', function () {
     global.window = new jsdom.JSDOM(html).window
     global.window.commonmark = commonmark
     global.window.MathJax = { Hub: { Queue: function () {} } } // mock
-    global.window.texme = {
+    global.window.mdme = {
       onRenderPage: function () {
         delete global.window
         delete global.MathJax
         done()
       }
     }
-    texme.renderPage()
+    mdme.renderPage()
   })
   */
 })

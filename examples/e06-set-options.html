@@ -1,6 +1,17 @@
 <!DOCTYPE html>
-<script>window.mdme = { style: 'plain' }</script>
-<script src="../mdme.js"></script><textarea>
+<script>window.mdme = { renderOnLoad: false }</script>
+<script src="../mdme.js"></script>
+<script>
+window.onload = function () {
+  var button = document.getElementById('button')
+  button.onclick = function () {
+    button.remove()
+    mdme.setOption('style', 'plain')
+    mdme.renderPage()
+  }
+}
+</script>
+<textarea>
 
 # Atomic Theory
 
@@ -10,3 +21,6 @@ began as a philosophical concept in ancient Greece and entered the
 scientific mainstream in the early 19th century when discoveries in the
 field of chemistry showed that matter did indeed behave as if it were
 made up of atoms.
+
+</textarea>
+<div><button id="button">Render</button></div>

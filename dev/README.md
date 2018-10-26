@@ -1,8 +1,8 @@
-TeXMe Developer Notes
+MdMe Developer Notes
 =====================
 
 This document contains notes that may be useful to the developers of
-TeXMe.
+MdMe.
 
 
 Release Checklist
@@ -14,7 +14,7 @@ Perform the following tasks for every release:
   - Update version in package.json.
   - Update version in Makefile.
   - Update copyright notice in LICENSE.md.
-  - Update copyright notice in texme.js.
+  - Update copyright notice in mdme.js.
   - Update CHANGES.md.
   - Update minified script.
 
@@ -28,7 +28,7 @@ Perform the following tasks for every release:
 
   - Tag the release.
 
-        git tag <VERSION> -m "TeXMe <VERSION>"
+        git tag <VERSION> -m "MdMe <VERSION>"
         git push
         git push origin <VERSION>
 

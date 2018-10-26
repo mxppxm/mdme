@@ -1,6 +1,6 @@
 {
     "source": {
-        "include": "texme.js"
+        "include": "mdme.js"
     },
     "opts": {
         "destination": "docs",
