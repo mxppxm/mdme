@@ -27,7 +27,7 @@ Markdown and LaTeX content, MdMe renders Markdown only. Thus MdMe is
 smaller, lighter, and simpler than TeXMe, and a good choice for writing
 Markdown-only (no LaTeX) documents.
 
-[MdMe]: https://github.com/susam/texme
+[TeXMe]: https://github.com/susam/texme
 
 
 Contents
@@ -85,11 +85,11 @@ Open this HTML file with a web browser. It renders itself to look like
 this:
 [content-in-textarea.html](https://opendocs.github.io/mdme/examples/content-in-textarea.html).
 
-There are two simple rules to remember while using TeXMe:
+There are two simple rules to remember while using MdMe:
 
-  - TeXMe removes any leading and trailing whitespace in the content
+  - MdMe removes any leading and trailing whitespace in the content
     before rendering the content to HTML.
-  - TeXMe uses the first non-empty line of the content set the page
+  - MdMe uses the first non-empty line of the content set the page
     title if no explicit `<title>` element is specified. Any leading and
     trailing whitespace and hash (`#`) characters are removed while
     setting the page title.
@@ -124,7 +124,7 @@ TeXMe documentation for more details about this.
 
 [content in textarea]: #content-in-textarea
 [content in body]: #content-in-body
-[texme-caveats]: https://github.com/susam/texme#special-rules
+[texme-caveats]: https://github.com/susam/texme#caveats
 
 
 CDN URLs
