@@ -1,7 +1,7 @@
 MdMe
 ====
 
-MdMe (pronounced em-dee-me) is a lightweight JavaScript-based utility to
+MdMe (pronounced em-dee-me) is a lightweight JavaScript utility to
 create self-rendering Markdown documents.
 
 [![View Demo][Demo SVG]][Demo URL]
@@ -12,7 +12,7 @@ create self-rendering Markdown documents.
 [![MIT License][License SVG]][L]
 
 [Demo SVG]: https://img.shields.io/badge/view-demo-brightgreen.svg
-[Demo URL]: https://opendocs.github.io/mdme/examples/e00-demo.html
+[Demo URL]: https://opendocs.github.io/mdme/examples/content-in-textarea.html
 [Travis CI SVG]: https://travis-ci.com/susam/mdme.svg?branch=master
 [Travis CI URL]: https://travis-ci.com/susam/mdme
 [Coveralls SVG]: https://coveralls.io/repos/github/susam/mdme/badge.svg?branch=master
@@ -21,6 +21,13 @@ create self-rendering Markdown documents.
 [Downloads SVG]: https://img.shields.io/npm/dt/mdme.svg
 [NPM URL]: https://www.npmjs.com/package/mdme
 [License SVG]: https://img.shields.io/badge/license-MIT-blue.svg
+
+MdMe is a stripped down fork of [TeXMe]. While TeXMe renders both
+Markdown and LaTeX content, MdMe renders Markdown only. Thus MdMe is
+smaller, lighter, and simpler than TeXMe, and a good choice for writing
+Markdown-only (no LaTeX) documents.
+
+[MdMe]: https://github.com/susam/texme
 
 
 Contents
@@ -42,6 +49,9 @@ Contents
 
 Get Started
 -----------
+
+### Content in Textarea
+
 Copy and paste the code below into an HTML file with `.html` as the
 extension name:
 
@@ -73,14 +83,48 @@ This file contains one line of HTML code followed by Markdown content.
 
 Open this HTML file with a web browser. It renders itself to look like
 this:
-[e01-get-started.html](https://opendocs.github.io/mdme/examples/e01-get-started.html).
+[content-in-textarea.html](https://opendocs.github.io/mdme/examples/content-in-textarea.html).
 
-The rendered document demonstrates two interesting features of MdMe:
+There are two simple rules to remember while using TeXMe:
 
-  - It removes any leading and trailing whitespace in the content
-    specified in `<textarea>` before rendering the document.
-  - It uses the first non-empty line of the content in `<textarea>` to
-    set the page title if no explicit `<title>` element is specified.
+  - TeXMe removes any leading and trailing whitespace in the content
+    before rendering the content to HTML.
+  - TeXMe uses the first non-empty line of the content set the page
+    title if no explicit `<title>` element is specified. Any leading and
+    trailing whitespace and hash (`#`) characters are removed while
+    setting the page title.
+
+
+### Content in Body
+
+If you do not like to start your document with HTML tags, you can
+write your content first and add the `<script>` tag in the end like
+this:
+
+    # Atomic Theory
+
+    **Atomic theory** is a scientific theory of the nature of matter, which
+    states that matter is composed of discrete units called *atoms*. It
+    began as a philosophical concept in ancient Greece and entered the
+    scientific mainstream in the early 19th century when discoveries in the
+    field of chemistry showed that matter did indeed behave as if it were
+    made up of atoms.
+
+    <script src="https://cdn.jsdelivr.net/npm/mdme@0.1.0"></script>
+
+Here is the output:
+[content-in-body.html](https://opendocs.github.io/mdme/examples/content-in-body.html).
+
+Although, the code looks neater in this example, there is a limitation
+associated with this form of writing content: Since the content is part
+of the HTML `<body>` element (there is no `<textarea>` element in this
+code), the content should be written carefully, so that it does not have
+any HTML syntax error. See the [Caveats][texme-caveats] section of the
+TeXMe documentation for more details about this.
+
+[content in textarea]: #content-in-textarea
+[content in body]: #content-in-body
+[texme-caveats]: https://github.com/susam/texme#special-rules
 
 
 CDN URLs
@@ -132,7 +176,7 @@ complete and valid HTML5 example:
     </textarea>
 
 Here is the output:
-[e02-valid-html5.html](https://opendocs.github.io/mdme/examples/e02-valid-html5.html).
+[valid-html5.html](https://opendocs.github.io/mdme/examples/valid-html5.html).
 
 It has a few more lines of code to ensure that this HTML5 code validates
 successfully at [validator.w3.org][VALIDATOR]. As a result, this example
@@ -178,7 +222,7 @@ an example:
     made up of atoms.
 
 Here is the output:
-[e03-style-plain.html](https://opendocs.github.io/mdme/examples/e03-style-plain.html).
+[style-plain.html](https://opendocs.github.io/mdme/examples/style-plain.html).
 
 To render the document with absolutely no style, set `style` to
 `'none'`. The `'none'` style option is useful to disable the default
@@ -212,7 +256,7 @@ regular CSS code. Here is an example:
     made up of atoms.
 
 Here is the output:
-[e04-style-custom.html](https://opendocs.github.io/mdme/examples/e04-style-custom.html).
+[style-custom.html](https://opendocs.github.io/mdme/examples/style-custom.html).
 
 Note that the rendered content is displayed within a `<main>` element
 inside the `<body>`. That is why these elements are being styled in the
@@ -254,7 +298,7 @@ invokes rendering later on the click of a button by using the
     <div><button id="button">Render</button></div>
 
 Here is the output:
-[e06-skip-render.html](https://opendocs.github.io/mdme/examples/e05-skip-render.html).
+[skip-render.html](https://opendocs.github.io/mdme/examples/skip-render.html).
 
 
 ### Set Options After Loading
@@ -303,7 +347,7 @@ style to `'plain'` using this function:
     <div><button id="button">Render</button></div>
 
 Here is the output:
-[e07-set-options.html](https://opendocs.github.io/mdme/examples/e06-set-options.html).
+[set-options.html](https://opendocs.github.io/mdme/examples/set-options.html).
 
 
 Configuration Options

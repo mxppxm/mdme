@@ -1,6 +1,6 @@
 {
   "name": "mdme",
-  "version": "0.1.0",
+  "version": "0.2.0-dev",
   "description": "Self-rendering Markdown documents",
   "main": "mdme.js",
   "files": [
