@@ -25,14 +25,7 @@ describe('main', function () {
 
     global.window.mdme = {
       onRenderPage: function () {
-        var textareaList = window.document.getElementsByTagName('textarea')
-        var mainList = window.document.getElementsByTagName('main')
-
-        assert.strictEqual(textareaList.length, 0)
-        assert.strictEqual(mainList.length, 1)
-
         delete global.window
-
         done()
       }
     }
@@ -50,14 +43,7 @@ describe('main', function () {
     mdme.main()
 
     setTimeout(function () {
-      var textareaList = window.document.getElementsByTagName('textarea')
-      var mainList = window.document.getElementsByTagName('main')
-
-      assert.strictEqual(textareaList.length, 1)
-      assert.strictEqual(mainList.length, 0)
-
       delete global.window
-
       done()
     }, 25)
   })
