@@ -228,7 +228,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     if (typeof window !== 'undefined') {
       setWindowOptions()
 
-      loadjs('https://cdnjs.cloudflare.com/ajax/libs/commonmark/0.28.1/commonmark.js',
+      loadjs('https://cdnjs.cloudflare.com/ajax/libs/commonmark/0.28.1/commonmark.min.js',
         function () {
           commonmark = window.commonmark
         })
