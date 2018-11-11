@@ -66,6 +66,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     options.renderOnLoad = true
     options.style = 'viewer'
     options.onRenderPage = undefined
+
+    // Update "Configuration Options" section of README.md if this URL
+    // is changed.
+    options.commonmarkURL =
+      'https://cdnjs.cloudflare.com/ajax/libs/commonmark/0.28.1/commonmark.min.js'
   }
 
   /**
@@ -231,10 +236,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     if (typeof window !== 'undefined') {
       setWindowOptions()
 
-      loadjs('https://cdnjs.cloudflare.com/ajax/libs/commonmark/0.28.1/commonmark.min.js',
-        function () {
-          commonmark = window.commonmark
-        })
+      loadjs(options.commonmarkURL, function () {
+        commonmark = window.commonmark
+      })
 
       if (options.renderOnLoad) {
         window.onload = mdme.renderPage

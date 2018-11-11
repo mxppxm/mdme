@@ -40,8 +40,6 @@ Contents
   * [Style](#style)
   * [Skip Automatic Rendering on Load](#skip-automatic-rendering-on-load)
   * [Set Options After Loading](#set-options-after-loading)
-* [Use MdMe as a Library](#use-mdme-as-a-library)
-  * [Render Markdown](#render-markdown)
 * [Configuration Options](#configuration-options)
 * [License](#license)
 * [Support](#support)
@@ -371,6 +369,10 @@ Here is a quick reference for all the supported configuration options:
     automatically invoked after MdMe completes rendering the page. It
     is guaranteed that MdMe has completed rendering the page before
     invoking this callback.
+
+  - `commonmarkURL` (CDN URL of minified commonmark.js, i.e.,
+    commonmark.min.js, version 0.28.1 by default): URL to load
+    commonmark.js while running in a web browser.
 
 
 License
