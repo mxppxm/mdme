@@ -53,7 +53,7 @@ Get Started
 Copy and paste the code below into an HTML file with `.html` as the
 extension name:
 
-    <!DOCTYPE html><script src="https://cdn.jsdelivr.net/npm/mdme@0.2.0"></script><textarea>
+    <!DOCTYPE html><script src="https://cdn.jsdelivr.net/npm/mdme@0.3.0"></script><textarea>
 
     # Atomic Theory
 
@@ -108,7 +108,7 @@ this:
     field of chemistry showed that matter did indeed behave as if it were
     made up of atoms.
 
-    <script src="https://cdn.jsdelivr.net/npm/mdme@0.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mdme@0.3.0"></script>
 
 Here is the output:
 [content-in-body.html](https://opendocs.github.io/mdme/examples/content-in-body.html).
@@ -128,10 +128,10 @@ TeXMe documentation for more details about this.
 CDN URLs
 --------
 
-Use the following URL in the `<script>` tag to load version 0.2.0 (the
+Use the following URL in the `<script>` tag to load version 0.3.0 (the
 current version at this time) of MdMe:
 
-    https://cdn.jsdelivr.net/npm/mdme@0.2.0
+    https://cdn.jsdelivr.net/npm/mdme@0.3.0
 
 Use the following URL in the `<script>` tag to always load the latest
 version of MdMe:
@@ -159,7 +159,7 @@ complete and valid HTML5 example:
     <!DOCTYPE html>
     <html lang="en">
     <title>Notes on Atomic Theory</title>
-    <script src="https://cdn.jsdelivr.net/npm/mdme@0.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mdme@0.3.0"></script>
     <textarea>
 
     # Atomic Theory
@@ -208,7 +208,7 @@ an example:
 
     <!DOCTYPE html>
     <script>window.mdme = { style: 'plain' }</script>
-    <script src="https://cdn.jsdelivr.net/npm/mdme@0.2.0"></script><textarea>
+    <script src="https://cdn.jsdelivr.net/npm/mdme@0.3.0"></script><textarea>
 
     # Atomic Theory
 
@@ -229,7 +229,7 @@ regular CSS code. Here is an example:
 
     <!DOCTYPE html>
     <script>window.mdme = { style: 'none' }</script>
-    <script src="https://cdn.jsdelivr.net/npm/mdme@0.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mdme@0.3.0"></script>
     <style>
     body {
       background: lightcyan;
@@ -271,7 +271,7 @@ invokes rendering later on the click of a button by using the
 
     <!DOCTYPE html>
     <script>window.mdme = { renderOnLoad: false }</script>
-    <script src="https://cdn.jsdelivr.net/npm/mdme@0.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mdme@0.3.0"></script>
     <script>
     window.onload = function () {
       var button = document.getElementById('button')
@@ -319,7 +319,7 @@ style to `'plain'` using this function:
 
     <!DOCTYPE html>
     <script>window.mdme = { renderOnLoad: false }</script>
-    <script src="https://cdn.jsdelivr.net/npm/mdme@0.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mdme@0.3.0"></script>
     <script>
     window.onload = function () {
       var button = document.getElementById('button')
